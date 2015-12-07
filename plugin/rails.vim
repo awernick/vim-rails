@@ -32,7 +32,7 @@ function! RailsDetect(...) abort
   if !isdirectory(fn)
     let fn = fnamemodify(fn, ':h')
   endif
-  let file = findfile('config/environment.rb', escape(fn, ', ').';')
+  let file = findfile('config/routes.rb', escape(fn, ', ').';')
   if !empty(file) && isdirectory(fnamemodify(file, ':p:h:h') . '/app')
     let b:rails_root = fnamemodify(file, ':p:h:h')
     return 1
